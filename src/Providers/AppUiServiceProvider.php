@@ -53,6 +53,10 @@ class AppUiServiceProvider extends ServiceProvider
             "{$rootDir}/resources/views" => resource_path('views/vendor/appui'),
         ], 'appui.resources');
 
+		$this->publishes([
+			"{$rootDir}/dist" => resource_path('dist/vendor/appui'),
+			],'appui.assent');
+
         if (is_dir(resource_path('lang'))) {
             $this->publishes([
                 "{$rootDir}/resources/lang" => resource_path('lang/vendor/appui'),
